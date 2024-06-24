@@ -1,0 +1,13 @@
+services:
+  database:
+    container_name: oracle_sample
+    image: gvenzl/oracle-free:23.2-slim-faststart
+    volumes:
+      - "./startup-scripts:/container-entrypoint-initdb.d"
+      - "./db-sample-schemas-23.3:/db-sample-schemas-23.3"
+      - "./query-scripts:/query-scripts"
+    environment:
+      ORACLE_DATABASE: sample
+      ORACLE_PASSWORD: password
+    ports:
+      - "1521:1521"

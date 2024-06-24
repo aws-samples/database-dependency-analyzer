@@ -1,0 +1,40 @@
+{
+  "name": "database-dependency-analyzer",
+  "version": "1.0.0",
+  "description": "This project features a command line interface (CLI) tool to analyze database object dependencies within an [Oracle Database](https://www.oracle.com/database/).",
+  "main": "src/app.ts",
+  "scripts": {
+    "analyzer": "tsx --no-warnings=ExperimentalWarning --stack-size=65500 src/app.ts",
+    "view": "npm --prefix src/visualizer run build && cp data/visualization_data.json.gz src/visualizer/build && npm --prefix src/visualizer run view",
+    "sample:start-sample-db": "cd sample && ./start_sample_db.sh",
+    "sample:execute-queries": "./sample/execute_queries.sh",
+    "dev:format": "prettier --write .",
+    "dev:lint": "eslint --max-warnings=0 --no-warn-ignored src/**/*.ts"
+  },
+  "keywords": [],
+  "author": "Sam Wilson (zsamwil@amazon.com)",
+  "dependencies": {
+    "big-json": "^3.2.0",
+    "commander": "^12.0.0",
+    "tsx": "^4.7.1",
+    "eslint-define-config": "^2.1.0",
+    "eslint-plugin-security": "^2.1.1",
+    "fast-csv": "^5.0.1"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.0.2",
+    "@eslint/js": "^9.0.0",
+    "@types/big-json": "^3.2.4",
+    "@types/node": "^20.12.2",
+    "@typescript-eslint/eslint-plugin": "^7.7.0",
+    "eslint": "^8.57.0",
+    "eslint-config-love": "^47.0.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-promise": "^6.1.1",
+    "globals": "^15.0.0",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^7.7.0"
+  }
+}
