@@ -49,5 +49,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "overrides": {
+    "react-scripts": {
+      "nth-check": "2.0.1",
+      "ws": "8.17.1",
+      "postcss": "8.4.38"
+    }
   }
 }
